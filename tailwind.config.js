@@ -16,6 +16,11 @@ module.exports = {
       },
     },
     extend: {
+      lineHeight: {
+        'extra-loose': '2.5',
+        '12': '3rem',
+        '16': '4rem'
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
