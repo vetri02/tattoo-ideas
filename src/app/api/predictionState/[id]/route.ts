@@ -7,9 +7,7 @@ type ErrorResponse = {
 };
 
 // Configuring the function to run at the edge servers
-export const config = {
-  runtime: 'edge',
-}
+export const runtime = 'edge'
 
 // Defining the GET function for the API endpoint
 export async function GET(

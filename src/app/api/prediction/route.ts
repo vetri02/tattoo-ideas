@@ -15,9 +15,7 @@ const ratelimit = new Ratelimit({
 })
 
 // Configuring the runtime environment
-export const config = {
-    runtime: 'edge',
-}
+export const runtime = 'edge'
 
 // Defining the POST method for the API endpoint
 export async function POST(req: NextRequest) {
