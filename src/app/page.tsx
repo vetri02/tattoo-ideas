@@ -20,13 +20,14 @@ import { Input } from "@/components/ui/input"
 import { Skeleton } from '@/components/ui/skeleton';
 
 // ReloadIcon is an icon component
-import { ReloadIcon } from "@radix-ui/react-icons"
+import { UpdateIcon } from "@radix-ui/react-icons"
 
 // Logo, Dialog, Bg are custom components
 import Logo from "@/components/logos/logo"
 
 // Bars3Icon, XMarkIcon are icon components
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Bg from '@/components/bg/bg';
 
 // sleep is a utility function that pauses execution for a specified time
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -151,8 +152,8 @@ export default function Home() {
   };
 
   // ImageComponent is a functional component that takes a src prop and returns an Image component
-  const ImageComponent = ({ src }: { src: string }) => (
-    <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100  border-2 border-white sm:w-72 sm:rounded-2xl rotate-0 sm:rotate-2 sm:hover:rotate-0">
+  const ImageComponent = ({ src, pos }: { src: string, pos: string }) => (
+    <div className={`relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100  border-2 border-white sm:w-72 sm:rounded-2xl rotate-0 sm:${pos} sm:hover:rotate-0`}>
       <Image
         alt="Predictions"
         loading="lazy"
@@ -173,7 +174,7 @@ export default function Home() {
 
     <div className="relative min-h-screen">
 
-      {/* <Bg className="absolute inset-0 w-full" /> */}
+      <Bg className="absolute inset-0 w-full" />
 
       <header className="absolute inset-x-0 top-0 z-50">
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
@@ -203,7 +204,7 @@ export default function Home() {
                   {error}
                 </p>
                 <Button onClick={handleButtonClick} disabled={predictionOn} className='mt-4 w-full sm:w-1/3'>
-                  {predictionOn && <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />}
+                  {predictionOn && <UpdateIcon className="mr-2 h-4 w-4 animate-spin" />}
                   Go
                 </Button>
               </div>
@@ -226,10 +227,10 @@ export default function Home() {
             {prediction && prediction.output &&
              <div className="mt-16 sm:mt-20">
              <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-                <ImageComponent src={prediction.output[prediction.output.length - 1]} />
-                <ImageComponent src={prediction.output[prediction.output.length - 2]} />
-                <ImageComponent src={prediction.output[prediction.output.length - 3]} />
-                <ImageComponent src={prediction.output[prediction.output.length - 4]} />
+                <ImageComponent src={prediction.output[prediction.output.length - 1]} pos='rotate-2' />
+                <ImageComponent src={prediction.output[prediction.output.length - 2]} pos='-rotate-2'/>
+                <ImageComponent src={prediction.output[prediction.output.length - 3]} pos='rotate-2'/>
+                <ImageComponent src={prediction.output[prediction.output.length - 4]} pos='rotate-2'/>
                 </div>
               </div>
                 
@@ -245,7 +246,6 @@ export default function Home() {
                       width={3744}
                       height={5616}
                       decoding="async"
-                      data-nimg={1}
                       className="absolute inset-0 h-full w-full object-cover"
                       style={{ color: "transparent" }}
                       sizes="(min-width: 640px) 18rem, 11rem"
@@ -259,7 +259,6 @@ export default function Home() {
                       width={3936}
                       height={2624}
                       decoding="async"
-                      data-nimg={1}
                       className="absolute inset-0 h-full w-full object-cover"
                       style={{ color: "transparent" }}
                       sizes="(min-width: 640px) 18rem, 11rem"
@@ -273,7 +272,6 @@ export default function Home() {
                       width={5760}
                       height={3840}
                       decoding="async"
-                      data-nimg={1}
                       className="absolute inset-0 h-full w-full object-cover"
                       style={{ color: "transparent" }}
                       sizes="(min-width: 640px) 18rem, 11rem"
@@ -287,7 +285,6 @@ export default function Home() {
                       width={2400}
                       height={3000}
                       decoding="async"
-                      data-nimg={1}
                       className="absolute inset-0 h-full w-full object-cover border-stone-400"
                       style={{ color: "transparent" }}
                       sizes="(min-width: 640px) 18rem, 11rem"

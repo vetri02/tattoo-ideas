@@ -8,37 +8,37 @@ const Bg = (props: any) => {
     viewBox="0 0 1440 560"
     {...props}
   >
-    <g mask='url("#SvgjsMask1254")' fill="none">
-      <path fill='url("#SvgjsLinearGradient1255")' d="M0 0H1440V560H0z" />
-      <path d="M1440 0h-.32l.32 5.91z" fill="rgba(255, 255, 255, .1)" />
+    <g mask='url("#SvgjsMask1225")' fill="none">
+      <path fill='url("#SvgjsLinearGradient1226")' d="M0 0H1440V560H0z" />
+      <path d="M1440 0h-293.05L1440 7.46z" fill="rgba(255, 255, 255, .1)" />
       <path
-        d="M1439.68 0l.32 5.91v302.23L861.79 0z"
+        d="M1146.95 0L1440 7.46v62.1L562.18 0z"
         fill="rgba(255, 255, 255, .075)"
       />
       <path
-        d="M861.79 0L1440 308.14v107.15L333.73 0z"
+        d="M562.18 0L1440 69.56v264.52L456.7 0z"
         fill="rgba(255, 255, 255, .05)"
       />
       <path
-        d="M333.73 0L1440 415.29v4.28L249.83 0z"
+        d="M456.7 0L1440 334.08v66.86L210.27 0z"
         fill="rgba(255, 255, 255, .025)"
       />
-      <path d="M0 560h611.04L0 444.61z" fill="rgba(0, 0, 0, .1)" />
+      <path d="M0 560h66.31L0 308.08z" fill="rgba(0, 0, 0, .1)" />
       <path
-        d="M0 444.61L611.04 560h277.39L0 235.88z"
+        d="M0 308.08L66.31 560h147.54L0 155.81z"
         fill="rgba(0, 0, 0, .075)"
       />
       <path
-        d="M0 235.88L888.43 560h226.91L0 188.27z"
+        d="M0 155.81L213.85 560h326.31L0 109.7z"
         fill="rgba(0, 0, 0, .05)"
       />
       <path
-        d="M0 188.27L1115.34 560h13.13L0 108.05z"
+        d="M0 109.7L540.16 560h575.09L0 65.09z"
         fill="rgba(0, 0, 0, .025)"
       />
     </g>
     <defs>
-      <mask id="SvgjsMask1254">
+      <mask id="SvgjsMask1225">
         <path fill="#fff" d="M0 0H1440V560H0z" />
       </mask>
       <linearGradient
@@ -47,10 +47,10 @@ const Bg = (props: any) => {
         x2="84.72%"
         y2="139.29%"
         gradientUnits="userSpaceOnUse"
-        id="SvgjsLinearGradient1255"
+        id="SvgjsLinearGradient1226"
       >
-        <stop stopColor="rgba(34, 34, 34, 1)" offset={0} />
-        <stop stopColor="rgba(0, 0, 0, 1)" offset={1} />
+        <stop stopColor="rgba(3, 7, 18, 1)" offset={0} />
+        <stop stopColor="rgba(3, 7, 18, 1)" offset={1} />
       </linearGradient>
     </defs>
   </svg>
