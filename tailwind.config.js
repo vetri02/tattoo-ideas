@@ -21,6 +21,7 @@ module.exports = {
         '12': '3rem',
         '16': '4rem'
       },
+      
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

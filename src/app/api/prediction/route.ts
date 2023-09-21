@@ -11,7 +11,7 @@ import { kv } from '@vercel/kv'
 // Setting up the rate limiter with a sliding window of 5 requests per hour
 const ratelimit = new Ratelimit({
     redis: kv,
-    limiter: Ratelimit.slidingWindow(10, '1 h'),
+    limiter: Ratelimit.slidingWindow(20, '1 h'),
 })
 
 // Configuring the runtime environment
