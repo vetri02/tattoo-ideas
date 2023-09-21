@@ -127,7 +127,6 @@ export default function Home() {
         if (!!prediction) {
           // Setting translated data state
           setPrediction(prediction);
-          console.log(prediction.id)
           // Calling text to speech function
           let predictionsIdUrl = "/api/predictionState" + "/" + prediction.id;
 
