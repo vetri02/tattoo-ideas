@@ -9,7 +9,7 @@
 
 // Importing necessary libraries and components
 // useState is a Hook that lets you add React state to function components
-import { useState } from 'react';
+import { JSX, SVGProps, useState } from 'react';
 
 // Next.js's Image component is an extension of the HTML <img> element, evolved for the modern web.
 import Image from 'next/image'
@@ -195,7 +195,25 @@ export default function Home() {
     link.click();
     document.body.removeChild(link);
   };
-  
+
+  const footer = [
+
+    {
+      name: 'GitHub',
+      href: 'https://github.com/vetri02/tattoo-ideas',
+      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
+        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+          <path
+            fillRule="evenodd"
+            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+            clipRule="evenodd"
+          />
+        </svg>
+      ),
+    },
+
+  ]
+
   // ImageComponent is a React functional component. It takes src, pos, title, and prompt as props and returns an Image component.
   const ImageComponent = ({ src, pos, title, prompt }: { src: string, pos: string, title?: string, prompt?: string }) => (
     <Dialog>
@@ -224,7 +242,7 @@ export default function Home() {
             width={640}
             height={640}
             src={src}
-            priority={true} 
+            priority={true}
             className="absolute inset-0 h-full w-full object-cover"
           />
         </AspectRatio>
@@ -277,7 +295,7 @@ export default function Home() {
                 </Button>
                 {predictionOn && <p className="text-sm pt-2">This may take at least 60 seconds. Please wait...
                 </p>}
-                  
+
               </div>
 
             </div>
@@ -307,10 +325,10 @@ export default function Home() {
             {prediction && prediction.output &&
               <div className="mt-16 sm:mt-20">
                 <div className="-my-4 flex flex-wrap  justify-center gap-3 sm:gap4 overflow-hidden py-4 sm:gap-8">
-                  <ImageComponent src={prediction.output[prediction.output.length - 1]} pos='rotate-2' title='1'/>
-                  <ImageComponent src={prediction.output[prediction.output.length - 2]} pos='-rotate-2' title='2'/>
-                  <ImageComponent src={prediction.output[prediction.output.length - 3]} pos='rotate-2' title='3'/>
-                  <ImageComponent src={prediction.output[prediction.output.length - 4]} pos='rotate-2' title='4'/>
+                  <ImageComponent src={prediction.output[prediction.output.length - 1]} pos='rotate-2' title='1' />
+                  <ImageComponent src={prediction.output[prediction.output.length - 2]} pos='-rotate-2' title='2' />
+                  <ImageComponent src={prediction.output[prediction.output.length - 3]} pos='rotate-2' title='3' />
+                  <ImageComponent src={prediction.output[prediction.output.length - 4]} pos='rotate-2' title='4' />
                 </div>
               </div>
             }
@@ -318,10 +336,10 @@ export default function Home() {
             {!prediction &&
               <div className="mt-16 sm:mt-20">
                 <div className="-my-4 flex flex-wrap  justify-center gap-3 sm:gap4 overflow-hidden py-4 sm:gap-8">
-                  <ImageComponent src='/images/dog.webp' pos='rotate-2' title='1' prompt='A golden retriever portrait as a tattoo in the arm'/>
+                  <ImageComponent src='/images/dog.webp' pos='rotate-2' title='1' prompt='A golden retriever portrait as a tattoo in the arm' />
                   <ImageComponent src='/images/panda.webp' pos='-rotate-2' title='2' prompt='Panda on the arm' />
-                  <ImageComponent src='/images/tiger.webp' pos='rotate-2' title='3' prompt='Tiger on the arm'/>
-                  <ImageComponent src='/images/samurai.webp' pos='rotate-2' title='4' prompt='Samurai on back'/>
+                  <ImageComponent src='/images/tiger.webp' pos='rotate-2' title='3' prompt='Tiger on the arm' />
+                  <ImageComponent src='/images/samurai.webp' pos='rotate-2' title='4' prompt='Samurai on back' />
                 </div>
               </div>
             }
@@ -330,18 +348,40 @@ export default function Home() {
 
       </main>
       <footer>
-      <div className="mx-auto border-t border-gray-400/10 max-w-7xl px-6 py-12 md:flex md:items-center md:justify-end lg:px-8">
-       
-        <div className="mt-8 md:mt-0">
-          <p className="text-center text-xs leading-5 text-gray-500">
-            
-            &copy; {currentYear} Tattoo Ideas. All rights reserved.
-
-            
-          </p>
+        <div className="mx-auto border-t border-gray-400/10 max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
+          <div className="flex justify-center space-x-6 md:order-2">
+            {footer.map((item) => (
+              <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
+                <span className="sr-only">{item.name}</span>
+                <item.icon className="h-6 w-6" aria-hidden="true" />
+              </a>
+            ))}
+          </div>
+          {/* <div className="mt-8 md:order-1 md:mt-0">
+            <div className="text-center text-xs leading-5 text-gray-500">
+              Powered by
+              {" "}
+              <a href="https://replicate.com/" target="_blank" className="font-bold hover:underline transition hover:text-gray-300 underline-offset-2">
+                Replicate
+              </a>
+              {" "}
+              and
+              {" "}
+              <a href="https://vercel.com/" target="_blank" className="font-bold hover:underline transition hover:text-gray-300 underline-offset-2">
+                Vercel
+              </a>
+            </div>
+          </div> */}
+          <div className="mt-8 md:order-1 md:mt-0 text-xs leading-5 text-gray-500">
+            Created by {" "}
+            <a href="https://github.com/vetri02" target="_blank" className="font-bold hover:underline transition hover:text-gray-300 underline-offset-2">
+              vetri02
+            </a>
+          </div>
+          
         </div>
-      </div>
-    </footer>
+      </footer>
+
     </div>
 
 
@@ -349,5 +389,9 @@ export default function Home() {
 
   )
 }
+
+
+
+
 
 
