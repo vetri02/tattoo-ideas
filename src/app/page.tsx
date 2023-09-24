@@ -275,6 +275,9 @@ export default function Home() {
                   {predictionOn && <UpdateIcon className="mr-2 h-4 w-4 animate-spin" />}
                   Go
                 </Button>
+                {predictionOn && <p className="text-sm pt-2">This may take at least 60 seconds. Please wait...
+                </p>}
+                  
               </div>
 
             </div>
