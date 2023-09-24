@@ -372,7 +372,7 @@ export default function Home() {
               </a>
             </div>
           </div> */}
-          <div className="mt-8 md:order-1 md:mt-0 text-xs leading-5 text-gray-500">
+          <div className="mt-8 md:order-1 md:mt-0 text-xs text-center md:text-left leading-5 text-gray-500">
             Created by {" "}
             <a href="https://github.com/vetri02" target="_blank" className="font-bold hover:underline transition hover:text-gray-300 underline-offset-2">
               vetri02
