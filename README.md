@@ -6,6 +6,13 @@ This project is a Next.js application that uses machine learning to generate tat
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Styling
+
+This project uses [Tailwind CSS](https://tailwindcss.com/) for styling. Tailwind CSS is a utility-first CSS framework that is highly customizable and allows for efficient styling of components.
+
+The application also uses [Shadcn](https://shadcn.com/) for creating dynamic and interactive user interfaces. Shadcn is a lightweight and flexible library that helps in building complex user interfaces.
+
+
 ## Machine Learning Model
 
 This application uses a machine learning model hosted on [Replicate](https://replicate.com/dokeet/yomico-art-tattoo). The model is trained to generate tattoo designs in the style of TOK. It takes a user's input message and generates a unique tattoo design based on that message.
