@@ -1,4 +1,4 @@
-## Tattoo Ideas
+## [Tattoo Ideas](https://www.tattooideas.io/)
 
 Welcome to the TOK Tattoo Generator. This application allows you to generate unique tattoo designs in the style of TOK. Simply input your desired message and let the application do the rest.
 
